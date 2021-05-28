@@ -8,15 +8,15 @@ const email = document.querySelector('.email') as HTMLInputElement;
 const password = document.querySelector('.password') as HTMLInputElement;
 const password2 = document.querySelector('.password2') as HTMLInputElement;
 
-form.addEventListener('submit', (event: Event) => {
+form.addEventListener('submit', function (event: Event) {
   event.preventDefault();
-  const target = event.target as HTMLFormElement;
-  hideErrorMessages(target);
+  hideErrorMessages(this);
   console.log('ENVIANDO...');
+
   checkForEmptyFields(username, email, password, password2);
   checkEmail(email);
   checkEqualPasswords(password, password2);
-  if (shouldSendForm(target)) console.log('Formulário enviado');
+  if (shouldSendForm(this)) console.log('Formulário enviado');
 });
 
 function checkForEmptyFields(...inputs: Array<HTMLInputElement>): void {
@@ -52,10 +52,3 @@ function checkEqualPasswords(input: HTMLInputElement, input2: HTMLInputElement):
 function shouldSendForm(form: HTMLFormElement): boolean {
   return form.querySelectorAll('.' + SHOW_ERROR_MESSAGES).length > 0 ? false : true;
 }
-
-function funcao(this: Date, argumento1: string): void {
-  console.log(this);
-  console.log(argumento1);
-}
-
-funcao.call(new Date(), 'Vyctor');

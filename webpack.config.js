@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: './src/A0019-exercicio/index.ts',
+    entry: './src/A0020-this-em-funcoes/index.ts',
     module: {
         rules: [{
             test: /\.tsx?$/,
