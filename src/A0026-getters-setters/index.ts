@@ -1,5 +1,5 @@
 class Pessoa {
-  constructor(public nome: string, public sobrenome: string, private idade: number, protected _cpf: string) {}
+  constructor(private nome: string, private sobrenome: string, private idade: number, private _cpf: string) {}
 
   set cpf(valor: string) {
     this._cpf = valor;
