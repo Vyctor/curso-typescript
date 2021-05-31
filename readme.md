@@ -122,3 +122,13 @@ export class AnimalSounds {
   animalSounds.playSound(cat);
 }
 ```
+## Associação
+É um vínculo que ocorre entre classes, uma associação binária, porém sendo possível também que a classe esteja vinculada a sí própria, se tornando assim uma associação unária, ou que uma associação seja compartilhada por mais de uma classe, o que conhecemnos por associação ternária ou N-ária, que é um tipo mais raro e complexo.
+
+## Agregação
+É um tipo especial de associação, onde tenta-se demonstrar que as informações de um objeto precisam ser complementados pelas informações ocntidas em um ou mais objetos de outra classe, chamados objetos-parte, conhecemos como todo/parte.
+Nessa relação, um objeto poderá agregar uma ou mais instâncias de um outro objeto. Para agregar muitas instâncias, a forma mais simples é utilizando arrays. Criamos um array como atributo da classe, sendo que o papel deste array é armazenar inúmeras instâncias de uma outra classe.
+
+Irei exemplificar esta relação pensando em um ambiente Web, onde teríamos o carrinho de compras (classe Carrinhos) com vários itens do tipo produtos (classe Produtos). Para agregar os produtos ao carrinho, usa-se o método IncluirItem( ) na classe Carrinhos, que contém outro método chama ExibeCarrinho() responsável por listar todos os itens pedidos, por meio da listagem dos dados do produto -método ListarDados() da classe Produtos-, e um método FechaCompra( ) reponsável por efetuar a soma dos itens adicionados no carrinho apresentando ao final o preço a ser pago pelo cliente.
+
+## Composição
