@@ -132,3 +132,5 @@ Nessa relação, um objeto poderá agregar uma ou mais instâncias de um outro o
 Irei exemplificar esta relação pensando em um ambiente Web, onde teríamos o carrinho de compras (classe Carrinhos) com vários itens do tipo produtos (classe Produtos). Para agregar os produtos ao carrinho, usa-se o método IncluirItem( ) na classe Carrinhos, que contém outro método chama ExibeCarrinho() responsável por listar todos os itens pedidos, por meio da listagem dos dados do produto -método ListarDados() da classe Produtos-, e um método FechaCompra( ) reponsável por efetuar a soma dos itens adicionados no carrinho apresentando ao final o preço a ser pago pelo cliente.
 
 ## Composição
+É uma variação da agregação. Uma composição tenta representar também uma relação todo - parte. No entento, na composição o objeto pai (todo) é responsável por criar e destruir suas partes.
+Em uma composição um mesmo objeto parte não pode se associar a mais de uma objeto pai.
