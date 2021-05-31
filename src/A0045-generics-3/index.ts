@@ -1,17 +1,14 @@
-export interface PessoaProtocolo<T = string, U = number> {
-  nome: T;
-  sobrenome: T;
-  idade: U;
-}
+type ObterChaveFn = <O, K extends keyof O>(objeto: O, chave: K) => O[K];
 
-const aluno: PessoaProtocolo = {
-  nome: 'Vyctor',
-  sobrenome: 'Guimarães',
-  idade: 26,
+const obterChave: ObterChaveFn = (objeto, chave) => objeto[chave];
+
+const animal = {
+  cor: 'Rosa',
+  vacinas: ['V1', 'V2', 'V3'],
+  idade: 5,
 };
 
-const aluno1: PessoaProtocolo<number, number> = {
-  nome: 123,
-  sobrenome: 123,
-  idade: 26,
-};
+const vacinas = obterChave(animal, 'vacinas');
+const cor = obterChave(animal, 'cor');
+
+console.log(vacinas, cor, obterChave(animal, 'idade'));
