@@ -23,8 +23,9 @@ function inverteNomeECor(param1: string, param2: string) {
 }
 
 function outroDecorador(param1: string) {
-  return function outroDecorador(target: Constructor) {
+  return function (target: Constructor) {
     console.log('Sou o outro decorador' + ' ' + param1);
+    return target;
   };
 }
 
