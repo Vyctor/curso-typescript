@@ -1,6 +1,10 @@
+type Constructor = {
+  new (...args: Array<any>): any;
+};
+
 function inverteNomeECor(param1: string, param2: string) {
-  return function inverteNomeECor<T extends new (...args: Array<any>) => any>(target: T): T {
-    console.log('Sou o decorador e recebi ', target);
+  return function (target: Constructor) {
+    console.log('Sou o decorador e recebi', target);
     return class extends target {
       cor: string;
       nome: string;
@@ -18,6 +22,13 @@ function inverteNomeECor(param1: string, param2: string) {
   };
 }
 
+function outroDecorador(param1: string) {
+  return function outroDecorador(target: Constructor) {
+    console.log('Sou o outro decorador' + ' ' + param1);
+  };
+}
+
+@outroDecorador('a')
 @inverteNomeECor('a', 'b')
 export class Animal {
   constructor(public nome: string, public cor: string) {}
